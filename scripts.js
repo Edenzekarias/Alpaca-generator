@@ -1,11 +1,10 @@
 // --- 1. IMAGE DATA (Using Relative Paths and your asset names) ---
-// NOTE: This array is configured to use the file names you uploaded.
 const ALPACAS_DATA = {
     accessories: [
+        { name: "Earings", url: "./assets/accessories/earings.png" }, // Added Earings as default
         { name: "Flower", url: "./assets/accessories/flower.png" },
         { name: "Glasses", url: "./assets/accessories/glasses.png" },
-        { name: "Headphone", url: "./assets/accessories/headphone.png" },
-        { name: "Earings", url: "./assets/accessories/earings.png" }
+        { name: "Headphone", url: "./assets/accessories/headphone.png" }
     ],
     hair: [
         { name: "Default", url: "./assets/hair/default.png" }, 
@@ -63,20 +62,21 @@ const ALPACAS_DATA = {
         { name: "Thick", url: "./assets/neck/thick.png" }, 
     ],
     nose: [
-        { name: "Nose", url: "./assets/nose/nose.png" }, // Assuming the one nose file is named 'nose.png'
+        { name: "Nose", url: "./assets/nose/nose.png" },
     ],
     leg: [
         { name: "Default", url: "./assets/leg/default.png" }, 
         { name: "Bubble Tea", url: "./assets/leg/bubble-tea.png" }, 
         { name: "Cookie", url: "./assets/leg/cookie.png" }, 
-        { name: "Game Console", url: "./assets/leg/game-console.png" },
-      { name: "Tilt Backward", url: "./assets/leg/tilt-backward.png" }, 
+        { name: "Game Console", url: "./assets/leg/game-console.png" }, 
+        { name: "Tilt Backward", url: "./assets/leg/tilt-backward.png" }, 
         { name: "Tilt Forward", url: "./assets/leg/tilt-forward.png" }, 
     ],
-    base: [ // Temporary base layer using the nose image
-        { name: "Base", url: "./assets/nose/nose.png" }
+    base: [ // Temporary base layer using the neck image to show a shape
+        { name: "Base", url: "./assets/neck/default.png" }
     ]
 };
+
 
 // --- 2. GLOBAL STATE ---
 let currentSelections = {
@@ -89,7 +89,7 @@ let currentSelections = {
     neck: ALPACAS_DATA.neck[0],
     nose: ALPACAS_DATA.nose[0],
     leg: ALPACAS_DATA.leg[0],
-    base: ALPACAS_DATA.base[0] // Set the temporary base layer
+    base: ALPACAS_DATA.base[0] 
 };
 
 // --- 3. DOM ELEMENTS ---
@@ -156,7 +156,7 @@ function selectCategory(category) {
 
 function randomizeAlpaca() {
     for (const category in ALPACAS_DATA) {
-        if (category !== 'base') { // Don't randomize the temporary base layer
+        if (category !== 'base') { 
             const assets = ALPACAS_DATA[category];
             const randomIndex = Math.floor(Math.random() * assets.length);
             currentSelections[category] = assets[randomIndex];
