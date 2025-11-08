@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpaca Image Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Customize Your Alpaca</h1>
+
+        <div class="alpaca-display">
+            <div class="alpaca-canvas">
+                <img id="backgrounds-img" class="alpaca-layer" src="./assets/backgrounds/blue50.png" data-layer="backgrounds">
+                <img id="base-img" class="alpaca-layer" src="./assets/neck/default.png" data-layer="base"> 
+                <img id="ears-img" class="alpaca-layer" src="./assets/ears/default.png" data-layer="ears">
+                <img id="neck-img" class="alpaca-layer" src="./assets/neck/default.png" data-layer="neck">
+                <img id="mouth-img" class="alpaca-layer" src="./assets/mouth/default.png" data-layer="mouth">
+                <img id="nose-img" class="alpaca-layer" src="./assets/nose/default.png" data-layer="nose">
+                <img id="eyes-img" class="alpaca-layer" src="./assets/eyes/default.png" data-layer="eyes">
+                <img id="hair-img" class="alpaca-layer" src="./assets/hair/default.png" data-layer="hair">
+                <img id="leg-img" class="alpaca-layer" src="./assets/leg/default.png" data-layer="leg">
+                <img id="accessories-img" class="alpaca-layer" src="./assets/accessories/default.png" data-layer="accessories">
+            </div>
+        </div>
+
+        <div class="customization-panel">
+            <h2>Style Options</h2>
+
+            <div id="category-buttons" class="button-group">
+                <button class="category-btn active" data-category="hair">Hair</button>
+                <button class="category-btn" data-category="ears">Ears</button>
+                <button class="category-btn" data-category="eyes">Eyes</button>
+                <button class="category-btn" data-category="neck">Neck</button>
+                <button class="category-btn" data-category="leg">Leg</button>
+                <button class="category-btn" data-category="mouth">Mouth</button>
+                <button class="category-btn" data-category="accessories">Accessories</button>
+                <button class="category-btn" data-category="backgrounds">Backgrounds</button>
+            </div>
+            
+            <div id="asset-options" class="button-group asset-options-group">
+                </div>
+            
+            <div class="action-buttons">
+                <button id="random-btn">Random</button>
+                <button id="download-btn">Download</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
